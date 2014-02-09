@@ -1,1 +1,1 @@
-web: lib/bottle/bin/python ./app.py $PORT
+web: env/bin/python ./app.py $PORT
