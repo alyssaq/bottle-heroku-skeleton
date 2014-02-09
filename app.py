@@ -13,14 +13,13 @@ import pandas as pd
 import numpy as np
 import sys
 from textblob.packages import nltk
-#import appconfig
 
 bottle.debug(True)
 
 MIN_CORPORA = [
-    'brown',  # Required for FastNPExtractor
-    'punkt',  # Required for WordTokenizer
-    'wordnet' # Required for lemmatization
+  'brown',  # Required for FastNPExtractor
+  'punkt',  # Required for WordTokenizer
+  'wordnet' # Required for lemmatization
 ]
 
 def download_lite():
@@ -28,28 +27,23 @@ def download_lite():
     print('Downloading "{0}"'.format(each))
     nltk.download(each)
 
-download_lite()
-       
+#download_lite()
+
 @get('/')
 def index():
   response.content_type = 'text/plain; charset=utf-8'
   
-  data = pd.DataFrame({'A': np.random.randn(3), 'B': np.random.randn(3)})
-  blob = TextBlob("Now is better than never.")
-
   ret =  'Hello world, I\'m {0}!\n\n'.format(os.getpid())
+
+  sentence = 'Now is better than never.'
+  ret += 'Testing TextBlob ngram with sentence: \n {0}'.format(sentence)
+  blob = TextBlob(sentence)
   for word_list in blob.ngrams(n=3):
-    ret += ' '.join(word_list)
-
-  ret += '\n'
-  ret += data.to_json()
-  ret += '\nRequest vars:\n'
-  for k, v in request.environ.iteritems():
-    if 'bottle.' in k:
-      continue
-    ret += '%s=%s\n' % (k, v)
-
-  ret += '\n'
+    ret += ('\n' + ' '.join(word_list))
+  
+  data = pd.DataFrame({'A': np.random.randn(3), 'B': np.random.randn(3)})
+  ret += 'Testing numpy and pandas: \n {0} \n'.format(data.to_json())
+    
   ret += 'Environment vars:\n'
 
   for k, v in env.iteritems():
