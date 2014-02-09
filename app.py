@@ -31,7 +31,7 @@ download_lite()
 
 @get('/')
 def index():
-  response.content_type = 'text/plain; charset=utf-8'
+  response.content_type = 'text/text; charset=utf-8'
   
   ret =  'Hi there, I\'m process {0}!\n\n'.format(os.getpid())
 
@@ -45,6 +45,7 @@ def index():
   func = "pd.DataFrame({'A': np.random.randn(3), 'B': np.random.randn(3)})"
   ret += '\nTesting Numpy and Pandas with command: \n {0} \n{1} \n'.format(func, data.to_json())
     
+  ret += '\nCode at: \n https://github.com/alyssaq/bottle-heroku-skeleton \n'
   ret += '\nEnvironment vars:\n'
 
   for k, v in env.iteritems():
