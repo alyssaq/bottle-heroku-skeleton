@@ -1,6 +1,7 @@
 #Bottle skeleton for Heroku with scientific packages
 
-A mini [bottle](http://bottlepy.org/) skeleton app for deployment on [heroku](http://heroku.com). Sample deployment with numpy, scipy, pandas, textblob.
+A mini [bottle](http://bottlepy.org/) skeleton app for deployment on [heroku](http://heroku.com).    
+Sample deployment with numpy, pandas, textblob (with some nltk corpora).
 
 ##Deploy to Heroku
 Clone and add to git
