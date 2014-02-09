@@ -32,4 +32,5 @@ def index():
 
     return ret
 
-bottle.run(host='0.0.0.0', port=argv[1])
+app_port = argv[1] if argv[1] else 8080
+bottle.run(port=app_port)
