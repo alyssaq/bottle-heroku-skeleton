@@ -36,15 +36,15 @@ def index():
   ret =  'Hello world, I\'m {0}!\n\n'.format(os.getpid())
 
   sentence = 'Now is better than never.'
-  ret += 'Testing TextBlob ngram with sentence: \n {0}'.format(sentence)
+  ret += 'Testing TextBlob ngram with sentence: \n "{0}"'.format(sentence)
   blob = TextBlob(sentence)
   for word_list in blob.ngrams(n=3):
     ret += ('\n' + ' '.join(word_list))
   
   data = pd.DataFrame({'A': np.random.randn(3), 'B': np.random.randn(3)})
-  ret += 'Testing numpy and pandas: \n {0} \n'.format(data.to_json())
+  ret += '\nTesting numpy and pandas: \n {0} \n'.format(data.to_json())
     
-  ret += 'Environment vars:\n'
+  ret += '\nEnvironment vars:\n'
 
   for k, v in env.iteritems():
     if 'bottle.' in k:
