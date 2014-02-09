@@ -36,13 +36,13 @@ def index():
   ret =  'Hello world, I\'m {0}!\n\n'.format(os.getpid())
 
   sentence = 'Now is better than never.'
-  ret += 'Testing TextBlob ngram with sentence: \n "{0}"'.format(sentence)
+  ret += 'Testing TextBlob ngram (n=3) with sentence: \n "{0}" \n'.format(sentence)
   blob = TextBlob(sentence)
   for word_list in blob.ngrams(n=3):
-    ret += ('\n' + ' '.join(word_list))
+    ret += (' '.join(word_list) + '\n')
   
   data = pd.DataFrame({'A': np.random.randn(3), 'B': np.random.randn(3)})
-  ret += '\nTesting numpy and pandas: \n {0} \n'.format(data.to_json())
+  ret += '\nTesting Numpy and Pandas: \n {0} \n'.format(data.to_json())
     
   ret += '\nEnvironment vars:\n'
 
