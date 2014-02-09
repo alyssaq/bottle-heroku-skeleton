@@ -10,6 +10,10 @@ Clone and add to git
     $ git add .
     $ git commit -m "init"
 
+Test with foreman
+
+    $ foreman start
+    
 Push to heroku
 
     $ heroku login
