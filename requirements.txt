@@ -1,6 +1,6 @@
 # This requirements file lists all dependecies for this project.
-#
-# Run 'pip install -r requirements.txt -t lib/' to install these dependencies
-# in this project's lib/ directory.   
-# `lib` directory is added to `sys.path` by `app_config.py`.
+# Run 'pip install -r requirements.txt' to install dependencies
 bottle
+numpy==1.7.0
+textblob==0.8.3
+pandas==0.13.0

@@ -13,12 +13,15 @@ Clone and add to git
 Test with foreman
 
     $ foreman start
-    
+
 Push to heroku
 
     $ heroku login
     $ git push heroku master
     $ heroku open //Open the app in the browser
+
+Specify a buildpack
+    $ heroku config:set BUILDPACK_URL=https://github.com/dbrgn/heroku-buildpack-python-sklearn/
 
 ##Develop locally
 
@@ -34,7 +37,7 @@ Install requirements into a virtualenv:
     $ python app.py 8888 // Specify a port
     $ python app.py      // Use default 8080 port
 
-Open browser at `http://localhost:8080`
+Open browser at `http://0.0.0.0:8080`
 
 ##License
 MIT License
