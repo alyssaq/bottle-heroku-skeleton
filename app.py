@@ -27,7 +27,7 @@ def download_lite():
     print('Downloading "{0}"'.format(each))
     nltk.download(each)
 
-#download_lite()
+download_lite()
 
 @get('/')
 def index():
