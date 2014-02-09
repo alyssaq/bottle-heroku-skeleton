@@ -42,7 +42,8 @@ def index():
     ret += (' '.join(word_list) + '\n')
   
   data = pd.DataFrame({'A': np.random.randn(3), 'B': np.random.randn(3)})
-  ret += '\nTesting Numpy and Pandas: \n {0} \n'.format(data.to_json())
+  func = 'pd.DataFrame({'A': np.random.randn(3), 'B': np.random.randn(3)})'
+  ret += '\nTesting Numpy and Pandas: \n {0} \n{1} \n'.format(func, data.to_json())
     
   ret += '\nEnvironment vars:\n'
 
