@@ -14,9 +14,8 @@ Clone and add to git
 Specify custom buildpack and push to heroku
 ```sh
   $ heroku login
-  $ heroku config:set BUILDPACK_URL=https://github.com/dbrgn/heroku-buildpack-python-sklearn/
+  $ heroku config:set BUILDPACK_URL=https://github.com/alyssaq/heroku-buildpack-python-sklearn
   $ git push heroku master
-  $ heroku run init # Initialise app
   $ heroku open     # Open the app in the browser
 ```
 
@@ -40,7 +39,6 @@ Install requirements into a virtualenv:
   $ virtualenv env
   $ source env/bin/activate
   $ pip install -r requirements.txt
-  $ python app_init.py 
   $ deactivate # Stop virtualenv when you are done
 ```
 
