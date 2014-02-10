@@ -1,1 +1,2 @@
-web: python ./app.py $PORT
+web: python app.py $PORT
+init: python app_init.py 

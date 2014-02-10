@@ -16,8 +16,10 @@ Specify custom buildpack and push to heroku
   $ heroku login
   $ heroku config:set BUILDPACK_URL=https://github.com/dbrgn/heroku-buildpack-python-sklearn/
   $ git push heroku master
-  $ heroku open #Open the app in the browser
+  $ heroku run init # Initialise app
+  $ heroku open     # Open the app in the browser
 ```
+
 ## Add more python libraries
 Specify your dependencies in `requirements.txt`    
 E.g. To add `scipy` and `scikit-lean`
@@ -33,6 +35,7 @@ Install requirements into a virtualenv:
   $ virtualenv env
   $ source env/bin/activate
   $ pip install -r requirements.txt
+  $ python app_init.py 
   $ deactivate # Stop virtualenv when you are done
 ```
 
