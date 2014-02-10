@@ -15,19 +15,6 @@ import sys
 
 bottle.debug(True)
 
-MIN_CORPORA = [
-  'brown',  # Required for FastNPExtractor
-  'punkt',  # Required for WordTokenizer
-  'wordnet' # Required for lemmatization
-]
-
-def download_lite():
-  for each in MIN_CORPORA:
-    print('Downloading "{0}"'.format(each))
-    nltk.download(each)
-
-download_lite()
-
 @get('/')
 def index():
   response.content_type = 'text/text; charset=utf-8'
