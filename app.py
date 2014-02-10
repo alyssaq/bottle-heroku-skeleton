@@ -12,7 +12,6 @@ from textblob import TextBlob
 import pandas as pd
 import numpy as np
 import sys
-from textblob.packages import nltk
 
 bottle.debug(True)
 

@@ -20,6 +20,11 @@ Specify custom buildpack and push to heroku
   $ heroku open     # Open the app in the browser
 ```
 
+### Update files in Heroku
+```sh
+  $ git push heroku master
+```
+
 ## Add more python libraries
 Specify your dependencies in `requirements.txt`    
 E.g. To add `scipy` and `scikit-lean`
